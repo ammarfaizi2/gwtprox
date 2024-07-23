@@ -3,14 +3,15 @@
 CC  = gcc
 CXX = g++
 INCLUDE_FLAGS = -I./src
-DEPFLAGS  = -MT "$@" -MMD -MP -MF $(@:%.o=%.d)
+DEPFLAGS  = -MT $@ -MMD -MP -MF $(@:%.o=%.d)
 CFLAGS    = -Wall -Wextra -O2 -ggdb3 -D_GNU_SOURCE $(INCLUDE_FLAGS)
 CXXFLAGS  = -Wall -Wextra -O2 -ggdb3 -D_GNU_SOURCE $(INCLUDE_FLAGS)
 LDFLAGS   = -O2 -ggdb3
 LDLIBS    = -lpthread
 
 GWT_CC_SRC = \
-	src/gwtprox/entry.c
+	src/gwtprox/entry.c \
+	src/gwtprox/gwtprox.c
 
 GWT_CXX_SRC =
 
